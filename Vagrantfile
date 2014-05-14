@@ -4,7 +4,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "saucy64-java-node"
   config.vm.box_url = "http://191.236.23.180/azureuser/vagrant/saucy64-java-node.box"
 
-  config.vm.network :forwarded_port, guest: 80, host: 8888
+  config.vm.network :forwarded_port, guest: 80, host: 8880
+  config.vm.network :forwarded_port, guest: 8888, host: 8888
 
   config.berkshelf.enabled = true
   config.omnibus.chef_version = :latest
