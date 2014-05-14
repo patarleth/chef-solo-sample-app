@@ -34,3 +34,19 @@ bash 'pown' do
 chown -R deploy:deploy /opt/deploy
   EOH
 end
+
+template "sample-app.upstart.conf" do
+  path "/etc/init/sample-app.conf"
+  source "sample-app.upstart.conf.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+end
+
+service "sample-app" do
+  provider Chef::Provider::Service::Upstart
+  supports :restart => true, :start => true, :stop => true
+  action [:enable, :start]
+end
+
+
