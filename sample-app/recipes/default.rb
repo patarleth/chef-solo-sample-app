@@ -1,19 +1,19 @@
-user :deploy do
+user 'deploy' do
   action :create
   system true
   shell "/bin/false"
 end
 
 directory '/opt/deploy' do
-  owner :deploy
-  group :deploy
+  owner 'deploy'
+  group 'deploy'
   mode "0755"
   action :create
 end
 
 directory '/opt/deploy/sample-app' do
-  owner :deploy
-  group :deploy
+  owner 'deploy'
+  group 'deploy'
   mode "0755"
   action :create
 end
