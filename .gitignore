@@ -27,3 +27,5 @@ _site/*
 .ruby-gemset
 .ruby-version
 .rvmrc
+
+Berksfile.lock
